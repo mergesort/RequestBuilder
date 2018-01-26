@@ -57,7 +57,7 @@ public enum RequestEncoding {
     /// The JSON text/html Accept/Content-Type encoding.
     case textHTML
 
-    func headerString() -> String {
+    fileprivate var headerString: String {
         switch self {
 
         case .json:
@@ -109,8 +109,8 @@ public enum RequestBuilder {
             request.httpBody = jsonData
         }
 
-        request.addValue(acceptEncoding.headerString(), forHTTPHeaderField: "Accept")
-        request.addValue(contentType.headerString(), forHTTPHeaderField: "Content-Type")
+        request.addValue(acceptEncoding.headerString, forHTTPHeaderField: "Accept")
+        request.addValue(contentType.headerString, forHTTPHeaderField: "Content-Type")
 
         request.httpShouldHandleCookies = false
 
