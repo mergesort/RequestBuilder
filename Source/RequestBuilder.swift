@@ -57,7 +57,7 @@ public enum RequestEncoding {
     /// The JSON text/html Accept/Content-Type encoding.
     case textHTML
 
-    var headerString: String {
+    fileprivate var headerString: String {
         switch self {
 
         case .json:
